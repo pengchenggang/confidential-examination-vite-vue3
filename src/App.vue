@@ -13,6 +13,7 @@ export default {
       app: { // 全局属性
         showAnswer: false,
         clearAnswer: false,
+        guaguakaVif: false,
       },
     }
   },
@@ -25,8 +26,14 @@ export default {
       }
     })
 
+    onKeyStroke('o', (e) => {
+      if (e.ctrlKey) { // ctrl + o
+        e.preventDefault()
+        this.app.guaguakaVif = !this.app.guaguakaVif
+      }
+    })
     onKeyStroke('i', (e) => {
-      if (e.ctrlKey) { // ctrl + k
+      if (e.ctrlKey) { // ctrl + i
         e.preventDefault()
         this.app.clearAnswer = !this.app.clearAnswer
       }

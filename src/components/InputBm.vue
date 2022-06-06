@@ -8,9 +8,33 @@
          }" />
   <span ref="inputSpanRef"
         style="font-size: 14px; position: absolute; left: -10000px">{{val1}}</span>
+  <!-- :storage-key="'vueuse-draggable' + answer"
+                storage-type="session" -->
+  <!-- <UseDraggable v-if="udVif"
+                :initialValue="{ x: initX, y: initY }"
+                :style="{width: this.answer.length * 15 + 15 + 30 + 'px',
+         }"
+                style="position: absolute; background-color: #666666; z-index: 1;">
+    Drag me! I am at
+  </UseDraggable> -->
+  <span style="position: absolute;"
+        v-show="guaguakaVif">
+    <div style="position: relative; overflow: hidden;"
+         :style="{width: this.answer.length * 15 + 15 + 30 + 'px', left: (this.answer.length * 15 + 15 + 30)*-1 + 'px'}">
+      <div ref="draggerRef"
+           onselectstart="return false;"
+           :style="{width: this.answer.length * 15 + 15 + 30 + 'px', left: 0}"
+           style="background-color: #f4f5f5; position: relative; top:0;z-index: 1; cursor: pointer; border-radius: 10px;">
+        <span style="font-size:12px; margin-left: 10px;">拖拽</span>
+      </div>
+    </div>
+  </span>
+
 </template>
 
 <script>
+// import { ref } from 'vue'
+// import { UseDraggable } from '@vueuse/components'
 export default {
   name: 'InputBm',
   props: {
@@ -19,15 +43,24 @@ export default {
       default: '',
     },
   },
-  components: {},
+  components: {
+    // UseDraggable
+  },
   data () {
     return {
+      guaguakaVif: false,
+      // udVif: false,
+      // initX: 0,
+      // initY: 0,
       backgroundSizeX: '0px',
       val1: '',
       val1Bak: '',
     }
   },
   watch: {
+    '$app.guaguakaVif': function (val) {
+      this.guaguakaVif = val
+    },
     '$app.clearAnswer': function (val) {
       this.val1 = ''
     },
@@ -76,9 +109,60 @@ export default {
       }
     },
   },
-  created () { },
+  created () {
+
+  },
   activated () { },
-  mounted () { },
+  mounted () {
+    // const bcr = this.$refs.inputBmRef.$el.getBoundingClientRect()
+    // console.info('inputBmRef', bcr)
+    // this.initX = bcr.left
+    // this.initY = bcr.top
+    // this.udVif = true
+    // console.info('this.$refs.draggerRef.$el', this.$refs.draggerRef)
+    const box = this.$refs.draggerRef
+    // console.info('box.style.left', parseInt(box.style.left))
+    box.onmousedown = function () {
+      // console.info('draggerRef.$el.onmousedown')
+
+      // 获取鼠标在div上按下的位置
+      var e = window.event  //接收事件对象
+      // 获取鼠标在当前事件源的位置
+      var x1 = e.clientX
+      var y1 = e.offsetY
+      const oldLeft = parseInt(box.style.left)
+      // console.info('oldLeft', oldLeft)
+      // 绑定移动事件
+      document.onmousemove = function () {
+
+        // 获取鼠标在浏览器中的位置 - 每个事件都有自己独特的事件对象
+        var e = window.event
+        var x2 = e.clientX // e.clientX
+        var y2 = e.clientY
+
+        // 计算left和top
+        var l = x2 - x1
+        var t = y2 - y1
+
+        // // 设置不能超出左上角和右上角
+        // if (l < 0) {
+        //   l = 0
+        // }
+        // if (t < 0) {
+        //   t = 0
+        // }
+
+        // 设置div的left和top
+        // console.info('box.style.left', box.style.left)
+        box.style.left = oldLeft + l + 'px'
+        // box.style.top = t + 'px'
+      }
+
+    }
+    window.onmouseup = function () {
+      document.onmousemove = null
+    }
+  },
   beforeUnmount () { }
 }
 </script>
