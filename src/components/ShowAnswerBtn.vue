@@ -4,6 +4,10 @@
           @click="clickHandle">{{btnText}} 答案</Button>
   <Tag size="large"
        style="margin-left:10px;">tip: Ctrl + K 可以切换显示隐藏答案</Tag>
+  <Tag size="large"
+       style="margin-left:10px;">tip: Ctrl + I 可以清除答案</Tag>
+  <Tag size="large"
+       style="margin-left:10px;">tip: Ctrl + O 可以开启刮刮卡</Tag>
 </template>
 
 <script>
