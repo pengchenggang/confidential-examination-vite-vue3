@@ -7,6 +7,22 @@
   resolved "https://registry.npmmirror.com/@babel/parser/-/parser-7.18.3.tgz#39e99c7b0c4c56cef4d1eed8de9f506411c2ebc2"
   integrity sha512-rL50YcEuHbbauAFAysNsJA4/f89fGTOBRNs9P81sniKnKAr4xULe5AecolcsKbi88xu0ByWYDj/S1AJ3FSFuSQ==
 
+"@babel/standalone@^7.17.11":
+  version "7.18.4"
+  resolved "http://192.168.77.105:8081/nexus/content/groups/npm-all/@babel/standalone/-/standalone-7.18.4.tgz#2a30c7e9a97227399929011dfe19f9f155c59e80"
+  integrity sha512-3dDouWyjdS8sJTm6hf8KkJq7fr9ORWMlWGNcMV/Uz2rNnoI6uu8wJGhZ7E65J+x6v8ta9yPbzkUT2YBFcWUbWg==
+
+"@vitejs/plugin-legacy@^1.8.2":
+  version "1.8.2"
+  resolved "http://192.168.77.105:8081/nexus/content/groups/npm-all/@vitejs/plugin-legacy/-/plugin-legacy-1.8.2.tgz#2f315bcb6685b12719813fb9412851445cca636f"
+  integrity sha512-NCOKU+pU+cxLMR9P9RTolEuOK+h+zYBXlknj+zGcKSj/NXBZYgA1GAH1FnO4zijoWRiTaiOm2ha9LQrELE7XHg==
+  dependencies:
+    "@babel/standalone" "^7.17.11"
+    core-js "^3.22.3"
+    magic-string "^0.26.1"
+    regenerator-runtime "^0.13.9"
+    systemjs "^6.12.1"
+
 "@vitejs/plugin-vue@^2.3.3":
   version "2.3.3"
   resolved "https://registry.npmmirror.com/@vitejs/plugin-vue/-/plugin-vue-2.3.3.tgz#fbf80cc039b82ac21a1acb0f0478de8f61fbf600"
@@ -137,6 +153,11 @@ batch-processor@1.0.0:
   version "1.0.0"
   resolved "https://registry.npmmirror.com/batch-processor/-/batch-processor-1.0.0.tgz#75c95c32b748e0850d10c2b168f6bdbe9891ace8"
   integrity sha512-xoLQD8gmmR32MeuBHgH0Tzd5PuSZx71ZsbhVxOCRbgktZEPe4SQy7s9Z50uPp0F/f7iw2XmkHN2xkgbMfckMDA==
+
+core-js@^3.22.3:
+  version "3.22.8"
+  resolved "http://192.168.77.105:8081/nexus/content/groups/npm-all/core-js/-/core-js-3.22.8.tgz#23f860b1fe60797cc4f704d76c93fea8a2f60631"
+  integrity sha512-UoGQ/cfzGYIuiq6Z7vWL1HfkE9U9IZ4Ub+0XSiJTCzvbZzgPA69oDF2f+lgJ6dFFLEdjW5O6svvoKzXX23xFkA==
 
 countup.js@^1.9.3:
   version "1.9.3"
@@ -342,6 +363,13 @@ magic-string@^0.25.7:
   dependencies:
     sourcemap-codec "^1.4.8"
 
+magic-string@^0.26.1:
+  version "0.26.2"
+  resolved "http://192.168.77.105:8081/nexus/content/groups/npm-all/magic-string/-/magic-string-0.26.2.tgz#5331700e4158cd6befda738bb6b0c7b93c0d4432"
+  integrity sha512-NzzlXpclt5zAbmo6h6jNc8zl2gNRGHvmsZW4IvZhTC4W7k4OlLP+S5YLussa/r3ixNT66KOQfNORlXHSOy/X4A==
+  dependencies:
+    sourcemap-codec "^1.4.8"
+
 nanoid@^3.3.4:
   version "3.3.4"
   resolved "https://registry.npmmirror.com/nanoid/-/nanoid-3.3.4.tgz#730b67e3cd09e2deacf03c027c81c9d9dbc5e8ab"
@@ -375,6 +403,11 @@ postcss@^8.1.10, postcss@^8.4.13:
     nanoid "^3.3.4"
     picocolors "^1.0.0"
     source-map-js "^1.0.2"
+
+regenerator-runtime@^0.13.9:
+  version "0.13.9"
+  resolved "http://192.168.77.105:8081/nexus/content/groups/npm-all/regenerator-runtime/-/regenerator-runtime-0.13.9.tgz#8925742a98ffd90814988d7566ad30ca3b263b52"
+  integrity sha512-p3VT+cOEgxFsRRA9X4lkI1E+k2/CtnKtU4gcxyaCUreilL/vqI6CdZ3wxVUx3UOUg+gnUOQQcRI7BmSI656MYA==
 
 resolve@^1.22.0:
   version "1.22.0"
@@ -416,6 +449,11 @@ supports-preserve-symlinks-flag@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npmmirror.com/supports-preserve-symlinks-flag/-/supports-preserve-symlinks-flag-1.0.0.tgz#6eda4bd344a3c94aea376d4cc31bc77311039e09"
   integrity sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==
+
+systemjs@^6.12.1:
+  version "6.12.1"
+  resolved "http://192.168.77.105:8081/nexus/content/groups/npm-all/systemjs/-/systemjs-6.12.1.tgz#47cdd23a6ec9f1b01cf5b5f70562c8550da229d3"
+  integrity sha512-hqTN6kW+pN6/qro6G9OZ7ceDQOcYno020zBQKpZQLsJhYTDMCMNfXi/Y8duF5iW+4WWZr42ry0MMkcRGpbwG2A==
 
 tinycolor2@^1.4.1:
   version "1.4.2"

@@ -28,6 +28,9 @@ export default {
     }
   },
   watch: {
+    '$app.clearAnswer': function (val) {
+      this.val1 = ''
+    },
     '$app.showAnswer': function (val) {
       // console.info('$app.showAnswer', val)
       if (val) { // 备份当前数据

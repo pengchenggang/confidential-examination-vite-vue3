@@ -12,6 +12,7 @@ export default {
     return {
       app: { // 全局属性
         showAnswer: false,
+        clearAnswer: false,
       },
     }
   },
@@ -21,6 +22,13 @@ export default {
       if (e.ctrlKey) { // ctrl + k
         e.preventDefault()
         this.app.showAnswer = !this.app.showAnswer
+      }
+    })
+
+    onKeyStroke('i', (e) => {
+      if (e.ctrlKey) { // ctrl + k
+        e.preventDefault()
+        this.app.clearAnswer = !this.app.clearAnswer
       }
     })
   },
