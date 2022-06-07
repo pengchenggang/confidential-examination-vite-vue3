@@ -63,6 +63,12 @@ export default {
     }
   },
   watch: {
+    isFocus (val) {
+      if (val) {
+        this.$app.inputNextFocus = this.inputNextFocus
+        this.$app.inputPreviousFocus = this.inputPreviousFocus
+      }
+    },
     '$app.showOne': function (val) {
       if (this.isFocus) {
         console.info('showOne')
@@ -125,6 +131,20 @@ export default {
           const tIndex = i + 1
           if (tIndex < inputs.length) { // 不是最后一个 就跳下一个 - 最后一个就不跳了
             inputs[tIndex].focus()
+            break
+          }
+        }
+      }
+    },
+    inputPreviousFocus () {
+      const thisInput = this.$refs.inputBmRef.$el.getElementsByTagName('input')[0]
+      const inputs = document.getElementsByTagName('input')
+      for (let i = 0; i < inputs.length; i++) {
+        if (inputs[i] === thisInput) {
+          // console.info('找到啦！')
+          const tIndex = i - 1
+          if (tIndex < inputs.length) { // 不是最后一个 就跳下一个 - 最后一个就不跳了
+            inputs[tIndex] && inputs[tIndex].focus()
             break
           }
         }

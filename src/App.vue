@@ -11,6 +11,8 @@ export default {
   data () {
     return {
       app: { // 全局属性
+        inputNextFocus: null,
+        inputPreviousFocus: null,
         showOne: false,
         showAnswer: false,
         clearAnswer: false,
@@ -20,6 +22,18 @@ export default {
   },
   mounted () {
     window.$app.config.globalProperties.$app = this.app
+    onKeyStroke('ArrowUp', (e) => {
+      if (e.altKey) { // Alt + ↑
+        e.preventDefault()
+        this.app.inputPreviousFocus && this.app.inputPreviousFocus()
+      }
+    })
+    onKeyStroke('ArrowDown', (e) => {
+      if (e.altKey) { // Alt + ↓
+        e.preventDefault()
+        this.app.inputNextFocus && this.app.inputNextFocus()
+      }
+    })
     onKeyStroke('k', (e) => {
       if (e.ctrlKey) { // ctrl + k
         e.preventDefault()
