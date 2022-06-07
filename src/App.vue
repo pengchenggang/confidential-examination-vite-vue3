@@ -11,6 +11,7 @@ export default {
   data () {
     return {
       app: { // 全局属性
+        showOne: false,
         showAnswer: false,
         clearAnswer: false,
         guaguakaVif: false,
@@ -23,6 +24,12 @@ export default {
       if (e.ctrlKey) { // ctrl + k
         e.preventDefault()
         this.app.showAnswer = !this.app.showAnswer
+      }
+    })
+    onKeyStroke('l', (e) => {
+      if (e.ctrlKey) { // ctrl + l
+        e.preventDefault()
+        this.app.showOne = !this.app.showOne
       }
     })
 

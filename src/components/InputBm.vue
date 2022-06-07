@@ -1,5 +1,7 @@
 <template>
   <Input v-model="val1"
+         @on-focus="onFocusHandle"
+         @on-blur="onBlurHandle"
          ref="inputBmRef"
          class="inputBmClass"
          :class="val1.toUpperCase() === answer ? 'md-checkbox-outline' : 'md-code'"
@@ -50,6 +52,7 @@ export default {
   },
   data () {
     return {
+      isFocus: false,
       guaguakaVif: false,
       // udVif: false,
       // initX: 0,
@@ -60,6 +63,17 @@ export default {
     }
   },
   watch: {
+    '$app.showOne': function (val) {
+      if (this.isFocus) {
+        console.info('showOne')
+        const len = this.val1.length
+        if (len < this.answer.length) {
+          this.val1 = this.answer.substr(0, len + 1)
+        } else {
+          this.val1 = this.answer
+        }
+      }
+    },
     '$app.guaguakaVif': function (val) {
       this.guaguakaVif = val
     },
@@ -96,6 +110,12 @@ export default {
   },
   computed: {},
   methods: {
+    onBlurHandle () {
+      this.isFocus = false
+    },
+    onFocusHandle () {
+      this.isFocus = true
+    },
     inputNextFocus () {
       const thisInput = this.$refs.inputBmRef.$el.getElementsByTagName('input')[0]
       const inputs = document.getElementsByTagName('input')

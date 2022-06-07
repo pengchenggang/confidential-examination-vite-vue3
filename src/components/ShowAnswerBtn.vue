@@ -8,6 +8,8 @@
        style="margin-left:10px;">tip: Ctrl + I 可以清除答案</Tag>
   <Tag size="large"
        style="margin-left:10px;">tip: Ctrl + O 可以开启刮刮卡</Tag>
+  <Tag size="large"
+       style="margin-left:10px;">tip: Ctrl + L 可以提示一个字</Tag>
 </template>
 
 <script>
