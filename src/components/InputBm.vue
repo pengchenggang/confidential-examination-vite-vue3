@@ -94,11 +94,13 @@ export default {
     },
     '$app.showAnswer': function (val) {
       // console.info('$app.showAnswer', val)
-      if (val) { // 备份当前数据
-        this.val1Bak = this.val1
-        this.val1 = this.answer
-      } else {
-        this.val1 = this.val1Bak
+      if (this.isFocus) {
+        if (val) { // 备份当前数据
+          this.val1Bak = this.val1
+          this.val1 = this.answer
+        } else {
+          this.val1 = this.val1Bak
+        }
       }
     },
     val1 (val) {
