@@ -85,8 +85,12 @@ export default {
     },
     '$app.clearAnswer': function (val) {
       if (this.isFocus) {
-        this.val1 = ''
-        this.inputPreviousFocus()
+        if (this.val1 !== '') {
+          this.val1 = ''
+        } else {
+          this.inputPreviousFocus()
+        }
+
       }
     },
     '$app.showAnswer': function (val) {
