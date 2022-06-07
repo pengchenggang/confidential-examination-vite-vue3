@@ -25,7 +25,9 @@
            onselectstart="return false;"
            :style="{width: this.answer.length * 15 + 15 + 30 + 'px', left: 0}"
            style="background-color: #f4f5f5; position: relative; top:0;z-index: 1; cursor: pointer; border-radius: 10px;">
-        <span style="font-size:12px; margin-left: 10px;">拖拽</span>
+        <span style="font-size:12px; margin-left: 10px;">
+          <Icon type="md-arrow-round-forward" />
+        </span>
       </div>
     </div>
   </span>
