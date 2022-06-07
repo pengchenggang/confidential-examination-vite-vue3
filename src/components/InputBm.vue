@@ -84,7 +84,9 @@ export default {
       this.guaguakaVif = val
     },
     '$app.clearAnswer': function (val) {
-      this.val1 = ''
+      if (this.isFocus) {
+        this.val1 = ''
+      }
     },
     '$app.showAnswer': function (val) {
       // console.info('$app.showAnswer', val)
