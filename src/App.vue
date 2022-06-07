@@ -59,6 +59,13 @@ export default {
         this.app.clearAnswer = !this.app.clearAnswer
       }
     })
+    onKeyStroke('u', (e) => {
+      if (e.ctrlKey) { // ctrl + u
+        e.preventDefault()
+        // this.app.clearAnswer = !this.app.clearAnswer
+        this.app.inputNextFocus && this.app.inputNextFocus()
+      }
+    })
   },
 }
 </script>

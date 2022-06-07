@@ -86,6 +86,7 @@ export default {
     '$app.clearAnswer': function (val) {
       if (this.isFocus) {
         this.val1 = ''
+        this.inputPreviousFocus()
       }
     },
     '$app.showAnswer': function (val) {
