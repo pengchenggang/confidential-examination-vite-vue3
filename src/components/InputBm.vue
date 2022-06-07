@@ -90,7 +90,6 @@ export default {
         } else {
           this.inputPreviousFocus()
         }
-
       }
     },
     '$app.showAnswer': function (val) {
