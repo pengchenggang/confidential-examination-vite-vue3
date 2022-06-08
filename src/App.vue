@@ -15,6 +15,7 @@ export default {
         inputPreviousFocus: null,
         showOne: false,
         showAnswer: false,
+        showAnswerAll: false,
         clearAnswer: false,
         guaguakaVif: false,
       },
@@ -35,10 +36,16 @@ export default {
       }
     })
     onKeyStroke('k', (e) => {
+      if (e.altKey && e.ctrlKey) {
+        e.preventDefault()
+        this.app.showAnswerAll = !this.app.showAnswerAll
+        return false
+      }
       if (e.ctrlKey) { // ctrl + k
         e.preventDefault()
         this.app.showAnswer = !this.app.showAnswer
       }
+
     })
     onKeyStroke('l', (e) => {
       if (e.ctrlKey) { // ctrl + l

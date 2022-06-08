@@ -103,6 +103,14 @@ export default {
         }
       }
     },
+    '$app.showAnswerAll': function (val) {
+      if (val) { // 备份当前数据
+        this.val1Bak = this.val1
+        this.val1 = this.answer
+      } else {
+        this.val1 = this.val1Bak
+      }
+    },
     val1 (val) {
       if (val.toUpperCase() === this.answer && this.$app.showAnswer === false) {
         this.inputNextFocus()
