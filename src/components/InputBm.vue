@@ -60,6 +60,7 @@ export default {
       backgroundSizeX: '0px',
       val1: '',
       val1Bak: '',
+      val1Bak2: '',
     }
   },
   watch: {
@@ -105,14 +106,15 @@ export default {
     },
     '$app.showAnswerAll': function (val) {
       if (val) { // 备份当前数据
-        this.val1Bak = this.val1
+        this.val1Bak2 = this.val1
         this.val1 = this.answer
       } else {
-        this.val1 = this.val1Bak
+        this.val1 = this.val1Bak2
       }
     },
     val1 (val) {
-      if (val.toUpperCase() === this.answer && this.$app.showAnswer === false) {
+      const showAnswerBool = this.$app.showAnswer === false && this.$app.showAnswerAll === false
+      if (val.toUpperCase() === this.answer && showAnswerBool) {
         this.inputNextFocus()
       }
 
