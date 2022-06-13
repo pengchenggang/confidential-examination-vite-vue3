@@ -47,6 +47,20 @@ export default {
       }
 
     })
+    onKeyStroke('j', (e) => {
+      if (e.ctrlKey) { // ctrl + j
+        e.preventDefault()
+        const n = document.documentElement.scrollTop
+        document.documentElement.scrollTop = n + 200
+      }
+    })
+    onKeyStroke('h', (e) => {
+      if (e.ctrlKey) { // ctrl + j
+        e.preventDefault()
+        const n = document.documentElement.scrollTop
+        document.documentElement.scrollTop = n - 200
+      }
+    })
     onKeyStroke('l', (e) => {
       if (e.ctrlKey) { // ctrl + l
         e.preventDefault()
