@@ -148,7 +148,10 @@ export default {
           // console.info('找到啦！')
           const tIndex = i + 1
           if (tIndex < inputs.length) { // 不是最后一个 就跳下一个 - 最后一个就不跳了
-            inputs[tIndex].focus()
+            inputs[tIndex + 1] && inputs[tIndex + 1].focus()
+            this.$nextTick(() => {
+              inputs[tIndex].focus()
+            })
             break
           }
         }
