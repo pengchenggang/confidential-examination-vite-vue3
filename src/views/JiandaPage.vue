@@ -24,7 +24,6 @@
     </div>
     <div style="height: 100px;"></div>
     <pageCommon :oThis="oThis"></pageCommon>
-
   </div>
 </template>
 
