@@ -17,12 +17,14 @@
 6．请详细叙述涉密会议应当采取的保密管理措施。
       </pre>
     </div>
-    <div v-for="(item,index) in jiandaData"
+    <div v-for="(item,index) in listData"
          :key="index"
          style="margin-top:15px;">
       <Tiankong :tiankongData="item" />
     </div>
     <div style="height: 100px;"></div>
+    <pageCommon :oThis="oThis"></pageCommon>
+
   </div>
 </template>
 
@@ -35,7 +37,8 @@ export default {
   components: { Tiankong },
   data () {
     return {
-      jiandaData
+      oThis: this,
+      listData: jiandaData
     }
   },
   watch: {},

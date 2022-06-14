@@ -32,13 +32,23 @@ export default {
       textSplit: [],
     }
   },
-  watch: {},
+  watch: {
+    tiankongData (val) {
+      this.init()
+    }
+  },
   computed: {},
-  methods: {},
+  methods: {
+    init () {
+      this.text = this.tiankongData.text
+      this.answer = this.tiankongData.answer
+      this.textSplit = this.text.replace(/\n/g, '<br>').split('$input')
+    }
+  },
   created () { },
   activated () { },
   mounted () {
-    this.textSplit = this.text.replace(/\n/g, '<br>').split('$input')
+    this.init()
   },
   beforeUnmount () { }
 }

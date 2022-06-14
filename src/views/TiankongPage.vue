@@ -6,12 +6,13 @@
     <div style="height: 20px;"> </div>
     <h1>填空题 80道</h1>
     <div style="height: 100px;"> </div>
-    <div v-for="(item,index) in tiankongData"
+    <div v-for="(item,index) in listData"
          :key="index"
          style="margin-top:15px;">
       <Tiankong :tiankongData="item" />
     </div>
     <div style="height: 100px;"></div>
+    <pageCommon :oThis="oThis"></pageCommon>
   </div>
 </template>
 
@@ -26,11 +27,15 @@ export default {
   },
   data () {
     return {
-      tiankongData
+      oThis: this,
+      listData: tiankongData
     }
   },
-  watch: {},
-  computed: {},
+  watch: {
+
+  },
+  computed: {
+  },
   methods: {},
   created () { },
   activated () { },

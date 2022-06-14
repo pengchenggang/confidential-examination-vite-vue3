@@ -6,12 +6,13 @@
     <div style="height: 20px;"> </div>
     <h1>多选题 30道</h1>
     <div style="height: 100px;"> </div>
-    <div v-for="(item,index) in duoxuanData"
+    <div v-for="(item,index) in listData"
          :key="index"
          style="margin-top:15px;">
       <Tiankong :tiankongData="item" />
     </div>
     <div style="height: 100px;"></div>
+    <pageCommon :oThis="oThis"></pageCommon>
   </div>
 </template>
 
@@ -24,7 +25,8 @@ export default {
   components: { Tiankong },
   data () {
     return {
-      duoxuanData
+      oThis: this,
+      listData: duoxuanData
     }
   },
   watch: {},

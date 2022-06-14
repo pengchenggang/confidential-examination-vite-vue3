@@ -11,6 +11,7 @@ export default {
   data () {
     return {
       app: { // 全局属性
+        randomDoIt: false,
         inputNextFocus: null,
         inputPreviousFocus: null,
         showOne: false,
@@ -59,6 +60,12 @@ export default {
         e.preventDefault()
         const n = document.documentElement.scrollTop
         document.documentElement.scrollTop = n - 200
+      }
+    })
+    onKeyStroke('r', (e) => {
+      if (e.ctrlKey) { // ctrl + r
+        e.preventDefault()
+        this.app.randomDoIt = !this.app.randomDoIt
       }
     })
     onKeyStroke('l', (e) => {
