@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@vueuse/core": "^8.5.0",
-    "view-ui-plus": "^1.0.0",
+    "view-ui-plus": "^1.2.0",
     "vue": "^3.2.25",
     "vue-router": "4"
   },
