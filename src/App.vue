@@ -46,22 +46,27 @@ export default {
         e.preventDefault()
         this.app.showAnswer = !this.app.showAnswer
       }
+      if (e.altKey) { // alt + k 上移动滚动条
+        e.preventDefault()
+        const n = document.documentElement.scrollTop
+        document.documentElement.scrollTop = n - 200
+      }
 
     })
     onKeyStroke('j', (e) => {
-      if (e.ctrlKey) { // ctrl + j
+      if (e.altKey) { // alt + j 下滚动
         e.preventDefault()
         const n = document.documentElement.scrollTop
         document.documentElement.scrollTop = n + 200
       }
     })
-    onKeyStroke('h', (e) => {
-      if (e.ctrlKey) { // ctrl + j
-        e.preventDefault()
-        const n = document.documentElement.scrollTop
-        document.documentElement.scrollTop = n - 200
-      }
-    })
+    // onKeyStroke('h', (e) => {
+    //   if (e.ctrlKey) { // ctrl + h
+    //     e.preventDefault()
+    //     const n = document.documentElement.scrollTop
+    //     document.documentElement.scrollTop = n - 200
+    //   }
+    // })
     onKeyStroke('r', (e) => {
       if (e.ctrlKey) { // ctrl + r
         e.preventDefault()
