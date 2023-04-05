@@ -11,6 +11,7 @@ export default {
   data () {
     return {
       app: { // 全局属性
+        isPhone: false,
         randomDoIt: false,
         inputNextFocus: null,
         inputPreviousFocus: null,
