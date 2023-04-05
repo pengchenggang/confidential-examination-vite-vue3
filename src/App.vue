@@ -5,12 +5,13 @@
 <script>
 // This starter template is using Vue 3 <script setup> SFCs
 // Check out https://vuejs.org/api/sfc-script-setup.html#script-setup
-import { onKeyStroke } from '@vueuse/core'
+import { onKeyStroke } from "@vueuse/core";
 export default {
-  name: 'App',
-  data () {
+  name: "App",
+  data() {
     return {
-      app: { // 全局属性
+      app: {
+        // 全局属性
         isPhone: false,
         randomDoIt: false,
         inputNextFocus: null,
@@ -21,46 +22,50 @@ export default {
         clearAnswer: false,
         guaguakaVif: false,
       },
-    }
+    };
   },
-  mounted () {
-    window.$app.config.globalProperties.$app = this.app
-    onKeyStroke('ArrowUp', (e) => {
-      if (e.altKey) { // Alt + ↑
-        e.preventDefault()
-        this.app.inputPreviousFocus && this.app.inputPreviousFocus()
+  mounted() {
+    window.$app.config.globalProperties.$app = this.app;
+    onKeyStroke("ArrowUp", (e) => {
+      if (e.altKey) {
+        // Alt + ↑
+        e.preventDefault();
+        this.app.inputPreviousFocus && this.app.inputPreviousFocus();
       }
-    })
-    onKeyStroke('ArrowDown', (e) => {
-      if (e.altKey) { // Alt + ↓
-        e.preventDefault()
-        this.app.inputNextFocus && this.app.inputNextFocus()
+    });
+    onKeyStroke("ArrowDown", (e) => {
+      if (e.altKey) {
+        // Alt + ↓
+        e.preventDefault();
+        this.app.inputNextFocus && this.app.inputNextFocus();
       }
-    })
-    onKeyStroke('k', (e) => {
+    });
+    onKeyStroke("k", (e) => {
       if (e.altKey && e.ctrlKey) {
-        e.preventDefault()
-        this.app.showAnswerAll = !this.app.showAnswerAll
-        return false
+        e.preventDefault();
+        this.app.showAnswerAll = !this.app.showAnswerAll;
+        return false;
       }
-      if (e.ctrlKey) { // ctrl + k
-        e.preventDefault()
-        this.app.showAnswer = !this.app.showAnswer
+      if (e.ctrlKey) {
+        // ctrl + k
+        e.preventDefault();
+        this.app.showAnswer = !this.app.showAnswer;
       }
-      if (e.altKey) { // alt + k 上移动滚动条
-        e.preventDefault()
-        const n = document.documentElement.scrollTop
-        document.documentElement.scrollTop = n - 200
+      if (e.altKey) {
+        // alt + k 上移动滚动条
+        e.preventDefault();
+        const n = document.documentElement.scrollTop;
+        document.documentElement.scrollTop = n - 200;
       }
-
-    })
-    onKeyStroke('j', (e) => {
-      if (e.altKey) { // alt + j 下滚动
-        e.preventDefault()
-        const n = document.documentElement.scrollTop
-        document.documentElement.scrollTop = n + 200
+    });
+    onKeyStroke("j", (e) => {
+      if (e.altKey) {
+        // alt + j 下滚动
+        e.preventDefault();
+        const n = document.documentElement.scrollTop;
+        document.documentElement.scrollTop = n + 200;
       }
-    })
+    });
     // onKeyStroke('h', (e) => {
     //   if (e.ctrlKey) { // ctrl + h
     //     e.preventDefault()
@@ -68,52 +73,91 @@ export default {
     //     document.documentElement.scrollTop = n - 200
     //   }
     // })
-    onKeyStroke('r', (e) => {
-      if (e.ctrlKey) { // ctrl + r
-        e.preventDefault()
-        this.app.randomDoIt = !this.app.randomDoIt
+    onKeyStroke("r", (e) => {
+      if (e.ctrlKey) {
+        // ctrl + r
+        e.preventDefault();
+        this.app.randomDoIt = !this.app.randomDoIt;
       }
-    })
-    onKeyStroke('l', (e) => {
-      if (e.ctrlKey) { // ctrl + l
-        e.preventDefault()
-        this.app.showOne = !this.app.showOne
+    });
+    onKeyStroke("l", (e) => {
+      if (e.ctrlKey) {
+        // ctrl + l
+        e.preventDefault();
+        this.app.showOne = !this.app.showOne;
       }
-    })
+    });
 
-    onKeyStroke('o', (e) => {
-      if (e.ctrlKey) { // ctrl + o
-        e.preventDefault()
-        this.app.guaguakaVif = !this.app.guaguakaVif
+    onKeyStroke("o", (e) => {
+      if (e.ctrlKey) {
+        // ctrl + o
+        e.preventDefault();
+        this.app.guaguakaVif = !this.app.guaguakaVif;
       }
-    })
-    onKeyStroke('i', (e) => {
-      if (e.ctrlKey) { // ctrl + i
-        e.preventDefault()
-        this.app.clearAnswer = !this.app.clearAnswer
+    });
+    onKeyStroke("i", (e) => {
+      if (e.ctrlKey) {
+        // ctrl + i
+        e.preventDefault();
+        this.app.clearAnswer = !this.app.clearAnswer;
       }
-    })
-    onKeyStroke('u', (e) => {
-      if (e.ctrlKey) { // ctrl + u
-        e.preventDefault()
+    });
+    onKeyStroke("u", (e) => {
+      if (e.ctrlKey) {
+        // ctrl + u
+        e.preventDefault();
         // this.app.clearAnswer = !this.app.clearAnswer
-        this.app.inputNextFocus && this.app.inputNextFocus()
+        this.app.inputNextFocus && this.app.inputNextFocus();
       }
-    })
+    });
   },
-}
+};
 </script>
 
 <style>
 body {
   background-color: #f4f5f5 !important;
 }
+@media screen and (min-width: 320px) {
+  html {
+    font-size: 14px;
+  }
+}
+@media screen and (min-width: 360px) {
+  html {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 400px) {
+  html {
+    font-size: 18px;
+  }
+}
+@media screen and (min-width: 440px) {
+  html {
+    font-size: 20px;
+  }
+}
+@media screen and (min-width: 480px) {
+  html {
+    font-size: 22px;
+  }
+}
+@media screen and (min-width: 640px) {
+  html {
+    font-size: 28px;
+  }
+}
+
 .mainWrapClass {
   background-color: white;
   padding: 50px;
-  width: 1100px;
+  width: 100%;
+  min-width: 400px;
+  max-width: 1100px;
   margin: 0 auto;
-  font-size: 22px;
+  /* font-size: 22px; */
+  font-size: 1em;
 }
 .marginRightClass {
   margin-right: 10px;
