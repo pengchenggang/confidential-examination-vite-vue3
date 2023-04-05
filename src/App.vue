@@ -153,11 +153,11 @@ body {
   background-color: white;
   padding: 50px;
   width: 100%;
-  min-width: 400px;
+  min-width: 320px;
   max-width: 1100px;
   margin: 0 auto;
   /* font-size: 22px; */
-  font-size: 1em;
+  font-size: 1.3em;
 }
 .marginRightClass {
   margin-right: 10px;
