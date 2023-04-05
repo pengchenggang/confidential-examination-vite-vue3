@@ -37,7 +37,7 @@ export default {
   },
   methods: {
     clickHandle () {
-      this.$app.showAnswer = !this.$app.showAnswer
+      this.$app.showAnswerAll = !this.$app.showAnswerAll
     }
   },
   created () { },
