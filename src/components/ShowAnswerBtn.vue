@@ -2,9 +2,9 @@
   <Button type="primary"
           style="margin-left:10px;"
           @click="clickHandle">{{btnText}} 答案</Button>
-          <Button type="primary"
+  <Button type="primary"
           style="margin-left:10px;"
-          @click="phoneHandle">手机模式</Button>
+          @click="phoneHandle">手机模式: {{shoujimoshi}}</Button>
   <Tag size="large"
        style="margin-left:10px;">tip: Ctrl + K 可以切换显示隐藏答案</Tag>
   <Tag size="large"
@@ -30,6 +30,13 @@ export default {
   },
   watch: {},
   computed: {
+    shoujimoshi () {
+      if (this.$app.isPhone) {
+        return '开'
+      } else {
+        return '关'
+      }
+    },
     btnText () {
       if (this.$app.showAnswer) {
         return '隐藏'
