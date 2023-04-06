@@ -150,9 +150,9 @@ export default {
       console.info('onBlurHandle')
       if (this.$app.isPhone) {
         this.$app.showAnswer = !this.$app.showAnswer
-      this.$nextTick(() => {
-        this.isFocus = false
-      })
+        this.$nextTick(() => {
+          this.isFocus = false
+        })
       } else {
         this.isFocus = false
       }
@@ -161,10 +161,10 @@ export default {
       console.info('onFocusHandle')
       this.isFocus = true
       if (this.$app.isPhone) {
-console.info('isPhone')
-this.$nextTick(() => {
-this.$app.showAnswer = !this.$app.showAnswer
-      })
+        console.info('isPhone')
+        this.$nextTick(() => {
+          this.$app.showAnswer = !this.$app.showAnswer
+        })
       }
     },
     inputNextFocus () {
@@ -174,10 +174,10 @@ this.$app.showAnswer = !this.$app.showAnswer
         if (inputs[i] === thisInput) {
           // console.info('找到啦！')
           let tIndex = i + 1
-          if (inputs[tIndex].type === 'checkbox') {
-            tIndex += 1 // 跳过checkbox
-          }
           if (tIndex < inputs.length) { // 不是最后一个 就跳下一个 - 最后一个就不跳了
+            if (inputs[tIndex].type === 'checkbox') {
+              tIndex += 1 // 跳过checkbox
+            }
             inputs[tIndex + 1] && inputs[tIndex + 1].focus()
             this.$nextTick(() => {
               inputs[tIndex].focus()
@@ -194,10 +194,10 @@ this.$app.showAnswer = !this.$app.showAnswer
         if (inputs[i] === thisInput && inputs[i].type === 'text') {
           // console.info('找到啦！')
           let tIndex = i - 1
-          if (inputs[tIndex].type === 'checkbox') {
-            tIndex -= 1 // 跳过checkbox
-          }
           if (tIndex < inputs.length) { // 不是最后一个 就跳下一个 - 最后一个就不跳了
+            if (inputs[tIndex].type === 'checkbox') {
+              tIndex -= 1 // 跳过checkbox
+            }
             inputs[tIndex] && inputs[tIndex].focus()
             break
           }
