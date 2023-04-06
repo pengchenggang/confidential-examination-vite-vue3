@@ -119,45 +119,28 @@ body {
   background-color: #f4f5f5 !important;
 }
 @media screen and (min-width: 320px) {
-  html {
-    font-size: 14px;
+  .mainWrapClass {
+    font-size: 1em;
+    padding: 20px;
   }
 }
-@media screen and (min-width: 360px) {
-  html {
-    font-size: 16px;
-  }
-}
-@media screen and (min-width: 400px) {
-  html {
-    font-size: 18px;
-  }
-}
-@media screen and (min-width: 440px) {
-  html {
-    font-size: 20px;
-  }
-}
-@media screen and (min-width: 480px) {
-  html {
-    font-size: 22px;
-  }
-}
+
 @media screen and (min-width: 640px) {
-  html {
-    font-size: 28px;
+  .mainWrapClass {
+    font-size: 22px;
+    padding: 50px;
   }
 }
 
 .mainWrapClass {
   background-color: white;
-  padding: 50px;
+  /* padding: 50px; */
   width: 100%;
   min-width: 320px;
   max-width: 1100px;
   margin: 0 auto;
   /* font-size: 22px; */
-  font-size: 1.3em;
+  /* font-size: 1.3em; */
 }
 .marginRightClass {
   margin-right: 10px;
