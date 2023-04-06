@@ -173,7 +173,10 @@ this.$app.showAnswer = !this.$app.showAnswer
       for (let i = 0; i < inputs.length; i++) {
         if (inputs[i] === thisInput) {
           // console.info('找到啦！')
-          const tIndex = i + 1
+          let tIndex = i + 1
+          if (inputs[tIndex].type === 'checkbox') {
+            tIndex += 1 // 跳过checkbox
+          }
           if (tIndex < inputs.length) { // 不是最后一个 就跳下一个 - 最后一个就不跳了
             inputs[tIndex + 1] && inputs[tIndex + 1].focus()
             this.$nextTick(() => {
@@ -188,9 +191,12 @@ this.$app.showAnswer = !this.$app.showAnswer
       const thisInput = this.$refs.inputBmRef.$el.getElementsByTagName('input')[0]
       const inputs = document.getElementsByTagName('input')
       for (let i = 0; i < inputs.length; i++) {
-        if (inputs[i] === thisInput) {
+        if (inputs[i] === thisInput && inputs[i].type === 'text') {
           // console.info('找到啦！')
-          const tIndex = i - 1
+          let tIndex = i - 1
+          if (inputs[tIndex].type === 'checkbox') {
+            tIndex -= 1 // 跳过checkbox
+          }
           if (tIndex < inputs.length) { // 不是最后一个 就跳下一个 - 最后一个就不跳了
             inputs[tIndex] && inputs[tIndex].focus()
             break
