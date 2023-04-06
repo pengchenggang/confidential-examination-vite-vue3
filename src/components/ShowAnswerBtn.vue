@@ -38,7 +38,7 @@ export default {
       }
     },
     btnText () {
-      if (this.$app.showAnswer) {
+      if (this.$app.showAnswerAll) {
         return '隐藏'
       } else {
         return '显示'
