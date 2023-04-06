@@ -93,6 +93,18 @@ export default {
         }
       }
     },
+    '$app.clearAnswerAll': function (val) {
+      this.val1 = ''
+    },
+    '$app.clearAnswer': function (val) {
+      if (this.isFocus) {
+        if (this.val1 !== '') {
+          this.val1 = ''
+        } else {
+          this.inputPreviousFocus()
+        }
+      }
+    },
     '$app.showAnswer': function (val) {
       // console.info('$app.showAnswer', val)
       if (this.isFocus) {

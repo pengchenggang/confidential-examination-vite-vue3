@@ -20,6 +20,7 @@ export default {
         showAnswer: false,
         showAnswerAll: false,
         clearAnswer: false,
+        clearAnswerAll: false,
         guaguakaVif: false,
       },
     };

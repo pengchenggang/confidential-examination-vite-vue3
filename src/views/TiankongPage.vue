@@ -2,6 +2,12 @@
   <div class="mainWrapClass">
     <Button type="primary"
             to="home">返回</Button>
+    <Button type="primary"
+            style="margin-left:15px;"
+            @click="checkToListHandle">显示勾选题</Button>
+    <Button type="primary"
+            style="margin-left:15px;"
+            @click="clearAnswerAllHandle">清空所有填空内容</Button>
     <ShowAnswerBtn></ShowAnswerBtn>
     <div style="height: 20px;"> </div>
     <h1>填空题 80道</h1>
@@ -9,6 +15,7 @@
     <div v-for="(item,index) in listData"
          :key="index"
          style="margin-top:15px;">
+      <Checkbox v-model="listData[index].check">　</Checkbox>
       <Tiankong :tiankongData="item" />
     </div>
     <div style="height: 100px;"></div>
@@ -36,7 +43,18 @@ export default {
   },
   computed: {
   },
-  methods: {},
+  methods: {
+    clearAnswerAllHandle () {
+      this.$app.clearAnswerAll = !this.$app.clearAnswerAll
+    },
+    checkToListHandle () {
+      if (tiankongData.length === this.listData.length) {
+        this.listData = this.listData.filter(item => item.check)
+      } else {
+        this.listData = tiankongData
+      }
+    },
+  },
   created () { },
   activated () { },
   mounted () { },
