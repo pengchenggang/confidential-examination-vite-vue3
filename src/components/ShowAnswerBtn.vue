@@ -10,9 +10,9 @@
   <Tag size="large"
        style="margin-left:10px;">tip: Ctrl + I 可以清除答案</Tag>
   <Tag size="large"
-       style="margin-left:10px;">tip: Ctrl + O 可以开启刮刮卡</Tag>
+       style="margin-left:10px;">tip: Alt + O 可以开启刮刮卡</Tag>
   <Tag size="large"
-       style="margin-left:10px;">tip: Ctrl + L 可以提示一个字</Tag>
+       style="margin-left:10px;">tip: Alt + L 可以提示一个字</Tag>
   <Tag size="large"
        style="margin-left:10px;">tip: Alt + J 向下滚动</Tag>
   <Tag size="large"

@@ -81,7 +81,7 @@ export default {
       }
     });
     onKeyStroke("l", (e) => {
-      if (e.ctrlKey) {
+      if (e.altKey) {
         // ctrl + l
         e.preventDefault();
         this.app.showOne = !this.app.showOne;
@@ -89,7 +89,7 @@ export default {
     });
 
     onKeyStroke("o", (e) => {
-      if (e.ctrlKey) {
+      if (e.altKey) {
         // ctrl + o
         e.preventDefault();
         this.app.guaguakaVif = !this.app.guaguakaVif;
