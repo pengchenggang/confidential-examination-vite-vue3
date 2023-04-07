@@ -70,6 +70,11 @@ export default {
         this.$app.inputPreviousFocus = this.inputPreviousFocus
       }
     },
+    '$app.clearAnswerAllAndFoucsFirst': function (val) {
+      console.info('$app.clearAnswerAllAndFoucsFirst watch')
+      this.val1 = ''
+      this.inputFirstFocus()
+    },
     '$app.showOne': function (val) {
       if (this.isFocus) {
         console.info('showOne')
@@ -165,6 +170,15 @@ export default {
         this.$nextTick(() => {
           this.$app.showAnswer = !this.$app.showAnswer
         })
+      }
+    },
+    inputFirstFocus () {
+      const inputs = document.getElementsByTagName('input')
+      for (let i = 0; i < inputs.length; i++) {
+        if (inputs[i].type === 'text') {
+          inputs[i].focus()
+          break
+        }
       }
     },
     inputNextFocus () {

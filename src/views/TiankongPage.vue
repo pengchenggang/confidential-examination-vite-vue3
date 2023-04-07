@@ -8,6 +8,9 @@
     <Button type="primary"
             style="margin-left:15px;"
             @click="clearAnswerAllHandle">清空所有填空内容</Button>
+    <Button type="primary"
+            style="margin-left:15px;"
+            @click="clearCheckHandle">清空勾选</Button>
     <ShowAnswerBtn></ShowAnswerBtn>
     <div style="height: 20px;"> </div>
     <h1>填空题 80道</h1>
@@ -15,7 +18,8 @@
     <div v-for="(item,index) in listData"
          :key="index"
          style="margin-top:15px;">
-      <Checkbox v-model="listData[index].check">　</Checkbox>
+      <Checkbox v-model="listData[index].check"
+                @click="checkHandle">　</Checkbox>
       <Tiankong :tiankongData="item" />
     </div>
     <div style="height: 100px;"></div>
@@ -35,7 +39,7 @@ export default {
   data () {
     return {
       oThis: this,
-      listData: tiankongData
+      listData: this.getListData()
     }
   },
   watch: {
@@ -44,6 +48,18 @@ export default {
   computed: {
   },
   methods: {
+    clearCheckHandle () {
+      this.listData = tiankongData
+      localStorage.clear()
+    },
+    getListData () {
+      return localStorage.getItem('tiankongData') ? JSON.parse(localStorage.getItem('tiankongData')) : tiankongData
+    },
+    checkHandle () {
+      setTimeout(() => {
+        localStorage.setItem('tiankongData', JSON.stringify(this.listData))
+      }, 100)
+    },
     clearAnswerAllHandle () {
       this.$app.clearAnswerAll = !this.$app.clearAnswerAll
     },
@@ -51,7 +67,7 @@ export default {
       if (tiankongData.length === this.listData.length) {
         this.listData = this.listData.filter(item => item.check)
       } else {
-        this.listData = tiankongData
+        this.listData = this.getListData()
       }
     },
   },
