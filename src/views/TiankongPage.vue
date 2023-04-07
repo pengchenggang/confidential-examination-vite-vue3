@@ -11,6 +11,9 @@
     <Button type="primary"
             style="margin-left:15px;"
             @click="clearCheckHandle">清空勾选</Button>
+    <Button type="primary"
+            style="margin-left:15px;"
+            @click="autoLoopHandle">自动Loop状态:{{ this.$app.autoLoop ? '开启' : '关闭'}}</Button>
     <ShowAnswerBtn></ShowAnswerBtn>
     <div style="height: 20px;"> </div>
     <h1>填空题 80道</h1>
@@ -48,6 +51,9 @@ export default {
   computed: {
   },
   methods: {
+    autoLoopHandle () {
+      this.$app.autoLoop = !this.$app.autoLoop
+    },
     clearCheckHandle () {
       this.listData = tiankongData
       localStorage.clear()

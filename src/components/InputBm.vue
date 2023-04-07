@@ -188,6 +188,14 @@ export default {
         if (inputs[i] === thisInput) {
           // console.info('找到啦！')
           let tIndex = i + 1
+          if (tIndex === inputs.length) {
+            // 最后一个填完了
+            if (this.$app.autoLoop) {
+              setTimeout(() => {
+                this.$app.clearAnswerAllAndFoucsFirst = !this.$app.clearAnswerAllAndFoucsFirst
+              }, 100)
+            }
+          }
           if (tIndex < inputs.length) { // 不是最后一个 就跳下一个 - 最后一个就不跳了
             if (inputs[tIndex].type === 'checkbox') {
               tIndex += 1 // 跳过checkbox

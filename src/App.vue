@@ -12,6 +12,7 @@ export default {
     return {
       app: {
         // 全局属性
+        autoLoop: false,
         clearAnswerAllAndFoucsFirst: false, // 清除全部数据，并focus第一个input
         isPhone: false,
         randomDoIt: false,
